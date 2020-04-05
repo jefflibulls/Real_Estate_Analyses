@@ -14,20 +14,23 @@
 
 # Parameters
 ########################################################################
-# neighborhood_proc - A character vector of Chicago neighborhoods (Needs to be processed to drop right into Zillow URL strings)
+# neighborhood_list - A character vector of Chicago neighborhoods (Needs to be processed to drop right into Zillow URL strings)
 # Note: all neighborhood names need to be connected with "-" since that's how the Zillow urls are set up
 
 
 #**********************************************************************************************************************************
 
 
-zillow_rental_scraper_func <- function(neighborhood_proc){
+# j <- neighborhoods_proc[1]
+
+
+zillow_rental_scraper_func <- function(neighborhood_list){
   
   start_time <- Sys.time()
   
   # First initialize cumulating variables
   all_listings_table <- data.frame()
-  for(j in neighborhoods_proc){
+  for(j in neighborhood_list){
     
     # Read in a base url to scrape from
     #zillow_url_base <- "https://www.zillow.com/chicago-il/rentals/"
